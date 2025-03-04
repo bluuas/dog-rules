@@ -1,26 +1,98 @@
+/* src/app/globals.css */
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: rgb(38, 38, 38);
+  --foreground: rgb(226, 223, 218);
+  --additional-color: rgb(175, 152, 136);
+  --font-title: var(--font-quattrocento);
+  --font-paragraph: var(--font-quattrocento-sans);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-title);
+  --font-mono: var(--font-paragraph);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: rgb(38, 38, 38);
+    --foreground: rgb(226, 223, 218);
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-paragraph);
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.sticky {
+  position: sticky;
+}
+
+.top-0 {
+  top: 0;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
+.bg-gray-100 {
+  background-color: #f7fafc;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.text-blue-500 {
+  color: #3b82f6;
+}
+
+.hover\:underline:hover {
+  text-decoration: underline;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
 }
