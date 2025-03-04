@@ -1,16 +1,10 @@
-export const cards = [
-  { name: 'Joker', displayed: 'J', emoji: '🃏', description: ['Can be used as a Joker.', 'It is forbidden to end the game with a Joker.'] },
-  { name: 'Ace', displayed: 'A', emoji: '♠', description: ['Marble to start', 'move 1', 'move 11'] },
-  { name: 'King', displayed: 'K', emoji: '♠', description: ['Marble to start', 'move 13'] },
-  { name: 'Queen', displayed: 'Q', emoji: '♠', description: ['move 12', 'copy the top-card on the pile. This copies only the card, not the action'] },
-  { name: 'Jack', displayed: 'J', emoji: '♠', description: ['Exchange two marbles, none of them has to be your own'] },
-  { name: '10', displayed: '10', emoji: '♠', description: ['move 10'] },
-  { name: '9', displayed: '9', emoji: '♠', description: ['move 9'] },
-  { name: '8', displayed: '8', emoji: '♠', description: ['move 8', 'swap all hand cards with anyone else'] },
-  { name: '7', displayed: '7', emoji: '♠', description: ['move 7', 'can be divided on each marble on the board'] },
-  { name: '6', displayed: '6', emoji: '♠', description: ['move 6', 'change direction of the game (CW/CCW)'] },
-  { name: '5', displayed: '5', emoji: '♠', description: ['move 5'] },
-  { name: '4', displayed: '4', emoji: '♠', description: ['move 4 forward or backwards', 'it is allowed to '] },
-  { name: '3', displayed: '3', emoji: '♠', description: ['move 3'] },
-  { name: '2', displayed: '2', emoji: '♠', description: ['move 2', 'steal a single card from anyone else'] },
-];
+import translations from '../i18n/translations';
+
+const getLanguage = () => {
+  // Logic to get the current language, e.g., from cookies or local storage
+  return "de"; // Default to German
+};
+
+const currentLanguage = getLanguage();
+
+export const cards = translations[currentLanguage].cards;

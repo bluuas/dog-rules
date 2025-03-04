@@ -1,25 +1,26 @@
-// src/app/page.tsx
 import React from 'react';
-import CardList from './components/CardList';
 import Card from './components/Card';
 import { cards } from './data/cards';
+import LanguageSwitcher from './components/LanguageSwitcher';
 
-export default function Home() {
+const CardList: React.FC = () => {
   return (
-    <div className="flex">
-      {/* <CardList cards={cards} /> */}
-      <div className="flex-1 p-4">
-        <h1 className="text-3xl font-bold mb-4">Dog Rules</h1>
-        {cards.map((card) => (
-          <Card 
-            key={card.name} 
-            name={card.name} 
-            displayed={card.displayed} 
-            emoji={card.emoji} 
-            description={card.description} 
+    <div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {cards.map(card => (
+          <Card
+            key={card.id}
+            name={card.name}
+            letter={card.letter}
+            emoji={card.emoji}
+            description={card.description}
+            detailed_description={card.detailed_description}
           />
         ))}
       </div>
+      <LanguageSwitcher />
     </div>
   );
-}
+};
+
+export default CardList;
