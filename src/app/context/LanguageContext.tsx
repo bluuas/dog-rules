@@ -1,4 +1,6 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+"use client";
+
+import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 
 interface LanguageContextProps {
   language: string;
@@ -9,6 +11,11 @@ const LanguageContext = createContext<LanguageContextProps | undefined>(undefine
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguage] = useState('en');
+
+  useEffect(() => {
+    const lang = navigator.language.split('-')[0] || 'en';
+    setLanguage(lang);
+  }, []);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>

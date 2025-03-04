@@ -1,10 +1,9 @@
 import translations from '../i18n/translations';
 
 const getLanguage = () => {
-  // Logic to get the current language, e.g., from cookies or local storage
-  return "de"; // Default to German
+  return navigator.language.split('-')[0] || 'en';
 };
 
 const currentLanguage = getLanguage();
 
-export const cards = translations[currentLanguage].cards;
+export const cards = translations[currentLanguage]?.cards || translations['en'].cards;

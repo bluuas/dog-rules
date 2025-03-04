@@ -1,11 +1,13 @@
 'use client';
 
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 const LanguageSwitcher: React.FC = () => {
+  const { setLanguage } = useLanguage();
+
   const changeLanguage = (lang: string) => {
-    // Logic to change the language, e.g., update cookies or local storage
-    window.location.reload(); // Reload to apply changes
+    setLanguage(lang);
   };
 
   return (

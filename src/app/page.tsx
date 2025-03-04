@@ -1,9 +1,15 @@
-import React from 'react';
+"use client";
+
+import React, { useEffect, useState } from 'react';
 import Card from './components/Card';
-import { cards } from './data/cards';
+import { useLanguage } from './context/LanguageContext';
+import translations from './i18n/translations';
 import LanguageSwitcher from './components/LanguageSwitcher';
 
 const CardList: React.FC = () => {
+  const { language } = useLanguage();
+  const cards = translations[language]?.cards || translations['en'].cards;
+
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
