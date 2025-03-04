@@ -1,4 +1,5 @@
 import translations from '../i18n/translations';
+import { Translations } from '../i18n/types';
 
 const getLanguage = () => {
   return navigator.language.split('-')[0] || 'en';
@@ -6,4 +7,4 @@ const getLanguage = () => {
 
 const currentLanguage = getLanguage();
 
-export const cards = translations[currentLanguage]?.cards || translations['en'].cards;
+export const cards = (translations as Translations)[currentLanguage]?.cards || translations['en'].cards;
