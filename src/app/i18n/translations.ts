@@ -7,7 +7,7 @@ interface Card {
   detailed_description: string[];
 }
 
-interface Translations {
+export interface Translations {
   [key: string]: {
     title: string;
     description: string;

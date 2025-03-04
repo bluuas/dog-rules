@@ -1,5 +1,5 @@
 import translations from '../i18n/translations';
-import { Translations } from '../i18n/types';
+import { Translations } from '../i18n/translations';
 
 const getLanguage = () => {
   return navigator.language.split('-')[0] || 'en';
