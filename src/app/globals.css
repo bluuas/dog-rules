@@ -5,8 +5,8 @@
   --background: rgb(38, 38, 38);
   --foreground: rgb(226, 223, 218);
   --additional-color: rgb(175, 152, 136);
-  --font-title: var(--font-quattrocento);
-  --font-paragraph: var(--font-quattrocento-sans);
+  --font-title: var(--font-montserrat);
+  --font-paragraph: var(--font-montserrat);
 }
 
 @theme inline {
