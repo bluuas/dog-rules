@@ -8,13 +8,13 @@ const LanguageSwitcher: React.FC = () => {
   const { setLanguage } = useLanguage();
   const [isFixed, setIsFixed] = useState(true);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsFixed(false);
-    }, 5000);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setIsFixed(false);
+  //   }, 5000);
 
-    return () => clearTimeout(timer);
-  }, []);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   const changeLanguage = (lang: string) => {
     setLanguage(lang);

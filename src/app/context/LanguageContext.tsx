@@ -10,10 +10,10 @@ interface LanguageContextProps {
 const LanguageContext = createContext<LanguageContextProps | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState('de');
 
   useEffect(() => {
-    const lang = navigator.language.split('-')[0] || 'en';
+    const lang = navigator.language.split('-')[0] || 'de';
     setLanguage(lang);
   }, []);
 
