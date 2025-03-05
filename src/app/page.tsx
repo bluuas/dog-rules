@@ -9,6 +9,7 @@ import LanguageSwitcher from './components/LanguageSwitcher';
 const CardList: React.FC = () => {
   const { language } = useLanguage();
   const cards = translations[language]?.cards || translations['en'].cards;
+  const generalRules = translations[language]?.general || translations['en'].general;
 
   return (
     <div>
@@ -23,6 +24,14 @@ const CardList: React.FC = () => {
             detailed_description={card.detailed_description}
           />
         ))}
+      </div>
+      <div className="mt-8 p-8">
+        <h2 className="text-2xl font-bold p-4">{generalRules.title}</h2>
+        <ul className="list-disc list-inside">
+          {generalRules.description.map((rule, index) => (
+            <li key={index}>{rule}</li>
+          ))}
+        </ul>
       </div>
       <LanguageSwitcher />
     </div>

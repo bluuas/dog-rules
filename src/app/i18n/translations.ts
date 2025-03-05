@@ -12,6 +12,10 @@ export interface Translations {
     title: string;
     description: string;
     cards: Card[];
+    general: {
+      title: string;
+      description: string[];
+    };
   };
 }
 
@@ -35,6 +39,13 @@ const translations: Translations = {
       { id: 13, name: '3', letter: '3', emoji: '♠', description: ['move 3 forward'], detailed_description: [] },
       { id: 14, name: '2', letter: '2', emoji: '♠', description: ['move 2 forward', 'steal a single card from anyone else'], detailed_description: [' can be averted, if the other person plays an 8, Q or a J'] },
     ],
+    general: {
+      title: "General rules",
+      description: [
+        'Each round is played with 6 cards per person',
+        'Find more rules at: https://www.braendi-dog.de/en/braendi-dog-spielregeln-anleitungen.html'
+      ],
+    },
   },
   es: {
     title: "reglas del perro",
@@ -55,6 +66,13 @@ const translations: Translations = {
       { id: 13, name: '3', letter: '3', emoji: '♠', description: ['mover 3 adelante'], detailed_description: [] },
       { id: 14, name: '2', letter: '2', emoji: '♠', description: ['mover 2 adelante', 'robar una sola carta de cualquier otra persona'], detailed_description: [' se puede evitar, si la otra persona juega un 8, Q o un J'] },
     ],
+    general: {
+      title: "Reglas generales",
+      description: [
+        'Cada ronda se juega con 6 cartas por persona',
+        'Encuentra más reglas en: https://www.braendi-dog.de/en/braendi-dog-spielregeln-anleitungen.html'
+      ],
+    },
   },
   de: {
     title: "HUND Regeln",
@@ -75,6 +93,13 @@ const translations: Translations = {
       { id: 13, name: '3', letter: '3', emoji: '♠', description: ['3 vorwärts bewegen'], detailed_description: [] },
       { id: 14, name: '2', letter: '2', emoji: '♠', description: ['2 vorwärts bewegen', 'eine einzelne Karte von jemand anderem stehlen'], detailed_description: [' kann abgewehrt werden, wenn die andere Person eine 8, Q oder einen J spielt'] },
     ],
+    general: {
+      title: "Allgemeine Regeln",
+      description: [
+        'Jede Runde wird mit 6 Karten pro Person gespielt',
+        'Weitere Regeln finden Sie unter: https://www.braendi-dog.de/en/braendi-dog-spielregeln-anleitungen.html'
+      ],
+    },
   },
   it: {
     title: "regole del cane",
@@ -95,6 +120,13 @@ const translations: Translations = {
       { id: 13, name: '3', letter: '3', emoji: '♠', description: ['muovi 3 avanti'], detailed_description: [] },
       { id: 14, name: '2', letter: '2', emoji: '♠', description: ['muovi 2 avanti', 'ruba una singola carta da qualcun altro'], detailed_description: [' può essere evitato, se l\'altra persona gioca un 8, Q o un J'] },
     ],
+    general: {
+      title: "Regole generali",
+      description: [
+        'Ogni turno si gioca con 6 carte per persona',
+        'Trova altre regole su: https://www.braendi-dog.de/en/braendi-dog-spielregeln-anleitungen.html'
+      ],
+    },
   },
   fr: {
     title: "règles du chien",
@@ -115,6 +147,13 @@ const translations: Translations = {
       { id: 13, name: '3', letter: '3', emoji: '♠', description: ['avancer de 3'], detailed_description: [] },
       { id: 14, name: '2', letter: '2', emoji: '♠', description: ['avancer de 2', 'voler une seule carte à quelqu\'un d\'autre'], detailed_description: [' peut être évité, si l\'autre personne joue un 8, Q ou un J'] },
     ],
+    general: {
+      title: "Règles générales",
+      description: [
+        'Chaque tour se joue avec 6 cartes par personne',
+        'Trouvez plus de règles sur: https://www.braendi-dog.de/en/braendi-dog-spielregeln-anleitungen.html'
+      ],
+    },
   },
   // Add more languages here...
 };
