@@ -91,7 +91,7 @@ const translations: Translations = {
       { id: 7, name: '9', letter: '9', emoji: '♠', description: ['9 vorwärts fahren'], detailed_description: [] },
       { id: 8, name: '8', letter: '8', emoji: '♠', description: ['8 vorwärts fahren', 'alle Handkarten mit jemand anderem tauschen'], detailed_description: ['kann abgewehrt werden, wenn die andere Person eine <b>8</b>, <b>Q</b> oder einen <b>J</b> spielt', 'abwehren zählt nicht als Zug'] },
       { id: 9, name: '7', letter: '7', emoji: '♠', description: ['7 vorwärts fahren', 'kann auf alle Murmeln auf dem Brett verteilt werden'], detailed_description: ['frisch auf den Startpunkt gesetzte Murmeln dürfen nicht bewegt werden', 'muss ausgefahren werden'] },
-      { id: 10, name: '6', letter: '6', emoji: '♠', description: ['6 vorwärts fahren', 'Richtung des Spiels ändern (↪️/↩️)', 'dabei wird sowohl die Fahrtrichtung, als auch die Legerichtung gedreht'], detailed_description: [] },
+      { id: 10, name: '6', letter: '6', emoji: '♠', description: ['6 vorwärts fahren', 'Richtung des Spiels ändern (↪️/↩️)'], detailed_description: ['dabei wird sowohl die Fahrtrichtung, als auch die Legerichtung gedreht'] },
       { id: 11, name: '5', letter: '5', emoji: '♠', description: ['5 vorwärts fahren'], detailed_description: [] },
       { id: 12, name: '4', letter: '4', emoji: '♠', description: ['4 vorwärts oder rückwärts fahren'], detailed_description: ['es ist erlaubt, das Ziel rückwärts über den Start zu erreichen'] },
       { id: 13, name: '3', letter: '3', emoji: '♠', description: ['3 vorwärts fahren'], detailed_description: [] },
