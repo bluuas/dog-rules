@@ -29,7 +29,7 @@ const CardList: React.FC = () => {
         <h2 className="text-2xl font-bold p-4">{generalRules.title}</h2>
         <ul className="list-disc list-inside">
           {generalRules.description.map((rule, index) => (
-            <li key={index}>{rule}</li>
+            <li key={index} dangerouslySetInnerHTML={{ __html: rule }} />
           ))}
         </ul>
       </div>

@@ -29,7 +29,7 @@ const Card: React.FC<CardProps> = ({ name, letter, emoji, description, detailed_
         <div className="ml-4">
           <ul className="list-disc list-inside">
             {description.map((desc, index) => (
-              <li key={index}>{desc}</li>
+              <li key={index} dangerouslySetInnerHTML={{ __html: desc }} />
             ))}
           </ul>
         </div>

@@ -24,7 +24,7 @@ const CardPopup: React.FC<CardPopupProps> = ({ card, onClose }) => {
         </ul>
         <ul className="list-plus list-inside text-left">
           {card.detailed_description.map((detailedDesc, index) => (
-            <li key={index}>{detailedDesc}</li>
+            <li key={index} dangerouslySetInnerHTML={{ __html: detailedDesc }} />
           ))}
         </ul>
       </div>
