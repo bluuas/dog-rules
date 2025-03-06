@@ -28,15 +28,12 @@ const SettingsButton: React.FC = () => {
 
     if (isOpen) {
       document.addEventListener('mousedown', handleClickOutside);
-      document.body.classList.add('blurred-background');
     } else {
       document.removeEventListener('mousedown', handleClickOutside);
-      document.body.classList.remove('blurred-background');
     }
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
-      document.body.classList.remove('blurred-background');
     };
   }, [isOpen]);
 
@@ -70,7 +67,6 @@ const SettingsButton: React.FC = () => {
       </button>
       {isOpen && (
         <>
-          <div className="blur-overlay"></div>
           <div className={`settings-menu ${isDarkMode ? 'dark' : ''}`}>
             <div className="language-switcher">
               {['de', 'en', 'es', 'it', 'fr'].map(lang => (
