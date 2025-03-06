@@ -12,8 +12,8 @@
 }
 
 @theme inline {
-  --color-background: var(--primary-color);
-  --color-foreground: var(--secondary-color);
+  --color-background: var(--secondary-color);
+  --color-foreground: var(--primary-color);
   --font-sans: var(--font-title);
   --font-mono: var(--font-paragraph);
 }
@@ -26,9 +26,14 @@
 }
 
 body {
-  background: var(--primary-color);
-  color: var(--secondary-color);
+  background: var(--secondary-color);
+  color: var(--primary-color);
   font-family: var(--font-paragraph);
+}
+
+a {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .flex {
