@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import '../styles/SettingsButton.css';
 
@@ -9,6 +9,14 @@ const SettingsButton: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [textSize, setTextSize] = useState('medium');
   const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const darkMode = localStorage.getItem('darkMode') === 'true';
+    setIsDarkMode(darkMode);
+    document.documentElement.classList.toggle('dark', darkMode);
+    document.body.style.backgroundColor = darkMode ? 'var(--primary-color)' : 'var(--secondary-color)';
+    document.body.style.color = darkMode ? 'var(--secondary-color)' : 'var(--primary-color)';
+  }, []);
 
   const toggleSettings = () => {
     setIsOpen(!isOpen);
@@ -31,8 +39,12 @@ const SettingsButton: React.FC = () => {
   };
 
   const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    document.documentElement.classList.toggle('dark', !isDarkMode);
+    const newDarkMode = !isDarkMode;
+    setIsDarkMode(newDarkMode);
+    document.documentElement.classList.toggle('dark', newDarkMode);
+    document.body.style.backgroundColor = newDarkMode ? 'var(--primary-color)' : 'var(--secondary-color)';
+    document.body.style.color = newDarkMode ? 'var(--secondary-color)' : 'var(--primary-color)';
+    localStorage.setItem('darkMode', newDarkMode.toString());
   };
 
   return (
@@ -49,7 +61,7 @@ const SettingsButton: React.FC = () => {
           </div>
           <div>
             <div className="text-size-slider-container">
-              <span className="text-size-emoji">🔎</span>
+              <span className="settings-emoji">🔎</span>
               <input
                 type="range"
                 min="0"
@@ -61,7 +73,7 @@ const SettingsButton: React.FC = () => {
             </div>
           </div>
           <div>
-            <h3>Dark Mode</h3>
+          <span className="settings-emoji">🥷</span>
             <label className="switch">
               <input type="checkbox" checked={isDarkMode} onChange={toggleDarkMode} />
               <span className="slider round"></span>
