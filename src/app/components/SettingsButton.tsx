@@ -37,13 +37,9 @@ const SettingsButton: React.FC = () => {
     };
   }, [isOpen]);
 
-  const toggleSettings = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleSettings = () => setIsOpen(!isOpen);
 
-  const changeLanguage = (lang: string) => {
-    setLanguage(lang);
-  };
+  const changeLanguage = (lang: string) => setLanguage(lang);
 
   const changeTextSize = (size: string) => {
     setTextSize(size);
@@ -51,10 +47,8 @@ const SettingsButton: React.FC = () => {
   };
 
   const handleTextSizeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-    if (value === '0') changeTextSize('small');
-    else if (value === '1') changeTextSize('medium');
-    else if (value === '2') changeTextSize('large');
+    const sizes = ['small', 'medium', 'large'];
+    changeTextSize(sizes[parseInt(event.target.value)]);
   };
 
   const toggleDarkMode = () => {
@@ -70,29 +64,27 @@ const SettingsButton: React.FC = () => {
     <div className="settings-container" ref={settingsRef}>
       <button className="settings-button" onClick={toggleSettings}>⚙️</button>
       {isOpen && (
-        <div className="settings-menu">
+        <div className={`settings-menu ${isDarkMode ? 'dark' : ''}`}>
           <div className="language-switcher">
-            <button onClick={() => changeLanguage('de')}>🇩🇪</button>
-            <button onClick={() => changeLanguage('en')}>🇬🇧</button>
-            <button onClick={() => changeLanguage('es')}>🇪🇸</button>
-            <button onClick={() => changeLanguage('it')}>🇮🇹</button>
-            <button onClick={() => changeLanguage('fr')}>🇫🇷</button>
+            {['de', 'en', 'es', 'it', 'fr'].map(lang => (
+              <button key={lang} onClick={() => changeLanguage(lang)}>
+                {lang === 'de' ? '🇩🇪' : lang === 'en' ? '🇬🇧' : lang === 'es' ? '🇪🇸' : lang === 'it' ? '🇮🇹' : '🇫🇷'}
+              </button>
+            ))}
+          </div>
+          <div className="text-size-slider-container">
+            <span className="settings-emoji">🔎</span>
+            <input
+              type="range"
+              min="0"
+              max="2"
+              value={['small', 'medium', 'large'].indexOf(textSize).toString()}
+              onChange={handleTextSizeChange}
+              className="text-size-slider"
+            />
           </div>
           <div>
-            <div className="text-size-slider-container">
-              <span className="settings-emoji">🔎</span>
-              <input
-                type="range"
-                min="0"
-                max="2"
-                value={textSize === 'small' ? '0' : textSize === 'medium' ? '1' : '2'}
-                onChange={handleTextSizeChange}
-                className="text-size-slider"
-              />
-            </div>
-          </div>
-          <div>
-          <span className="settings-emoji">🥷</span>
+            <span className="settings-emoji">🥷</span>
             <label className="switch">
               <input type="checkbox" checked={isDarkMode} onChange={toggleDarkMode} />
               <span className="slider round"></span>

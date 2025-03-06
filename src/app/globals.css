@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 :root {
-  --primary-color: rgb(38, 38, 38);
+  --primary-color: rgb(44, 44, 44);
   --secondary-color: rgb(226, 223, 218);
   --font-title: var(--font-montserrat);
   --font-paragraph: var(--font-montserrat);
@@ -20,7 +20,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary-color: rgb(38, 38, 38);
+    --primary-color: rgb(44, 44, 44);
     --secondary-color: rgb(226, 223, 218);
   }
 }
