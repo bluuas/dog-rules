@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Card from './components/Card';
 import { useLanguage } from './context/LanguageContext';
 import translations from './i18n/translations';
-import LanguageSwitcher from './components/LanguageSwitcher';
+import SettingsButton from './components/SettingsButton';
 
 const CardList: React.FC = () => {
   const { language } = useLanguage();
@@ -33,7 +33,7 @@ const CardList: React.FC = () => {
           ))}
         </ul>
       </div>
-      <LanguageSwitcher />
+      <SettingsButton />
     </div>
   );
 };

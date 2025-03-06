@@ -2,30 +2,32 @@
 @import "tailwindcss";
 
 :root {
-  --background: rgb(38, 38, 38);
-  --foreground: rgb(226, 223, 218);
-  --additional-color: rgb(175, 152, 136);
+  --primary-color: rgb(38, 38, 38);
+  --secondary-color: rgb(226, 223, 218);
   --font-title: var(--font-montserrat);
   --font-paragraph: var(--font-montserrat);
+  --text-small: 0.75rem; /* 12px */
+  --text-medium: 1rem; /* 16px */
+  --text-large: 1.125rem; /* 18px */
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: var(--primary-color);
+  --color-foreground: var(--secondary-color);
   --font-sans: var(--font-title);
   --font-mono: var(--font-paragraph);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: rgb(38, 38, 38);
-    --foreground: rgb(226, 223, 218);
+    --primary-color: rgb(38, 38, 38);
+    --secondary-color: rgb(226, 223, 218);
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--primary-color);
+  color: var(--secondary-color);
   font-family: var(--font-paragraph);
 }
 
@@ -73,6 +75,10 @@ body {
   font-size: 1.5rem;
 }
 
+.text-3xl {
+  font-size: 1.875rem;
+}
+
 .font-bold {
   font-weight: bold;
 }
@@ -87,10 +93,6 @@ body {
 
 .hover\:underline:hover {
   text-decoration: underline;
-}
-
-.text-3xl {
-  font-size: 1.875rem;
 }
 
 .mb-4 {
