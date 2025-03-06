@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import '../styles/SettingsButton.css';
 
@@ -9,6 +9,7 @@ const SettingsButton: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [textSize, setTextSize] = useState('medium');
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const settingsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const darkMode = localStorage.getItem('darkMode') === 'true';
@@ -17,6 +18,24 @@ const SettingsButton: React.FC = () => {
     document.body.style.backgroundColor = darkMode ? 'var(--primary-color)' : 'var(--secondary-color)';
     document.body.style.color = darkMode ? 'var(--secondary-color)' : 'var(--primary-color)';
   }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (settingsRef.current && !settingsRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
 
   const toggleSettings = () => {
     setIsOpen(!isOpen);
@@ -48,7 +67,7 @@ const SettingsButton: React.FC = () => {
   };
 
   return (
-    <div className="settings-container">
+    <div className="settings-container" ref={settingsRef}>
       <button className="settings-button" onClick={toggleSettings}>⚙️</button>
       {isOpen && (
         <div className="settings-menu">
