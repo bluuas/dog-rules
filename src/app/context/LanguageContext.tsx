@@ -14,8 +14,10 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguage] = useState('de');
 
   useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const queryLang = urlParams.get('lang');
     const cookieLang = Cookies.get('language');
-    const lang = cookieLang || navigator.language.split('-')[0] || 'de';
+    const lang = queryLang || cookieLang || navigator.language.split('-')[0] || 'de';
     setLanguage(lang);
   }, []);
 
