@@ -1,7 +1,6 @@
 "use client";
 
 import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
-import Cookies from 'js-cookie';
 
 interface LanguageContextProps {
   language: string;
@@ -16,14 +15,9 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const queryLang = urlParams.get('lang');
-    const cookieLang = Cookies.get('language');
-    const lang = queryLang || cookieLang || navigator.language.split('-')[0] || 'de';
+    const lang = queryLang || navigator.language.split('-')[0] || 'de';
     setLanguage(lang);
   }, []);
-
-  useEffect(() => {
-    Cookies.set('language', language);
-  }, [language]);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>
