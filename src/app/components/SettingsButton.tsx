@@ -28,12 +28,15 @@ const SettingsButton: React.FC = () => {
 
     if (isOpen) {
       document.addEventListener('mousedown', handleClickOutside);
+      document.body.classList.add('blurred-background');
     } else {
       document.removeEventListener('mousedown', handleClickOutside);
+      document.body.classList.remove('blurred-background');
     }
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
+      document.body.classList.remove('blurred-background');
     };
   }, [isOpen]);
 
@@ -62,35 +65,40 @@ const SettingsButton: React.FC = () => {
 
   return (
     <div className="settings-container" ref={settingsRef}>
-      <button className="settings-button" onClick={toggleSettings}>⚙️</button>
+      <button className={`settings-button ${isOpen ? 'rotate' : ''}`} onClick={toggleSettings}>
+        {isOpen ? '✖' : '⚙️'}
+      </button>
       {isOpen && (
-        <div className={`settings-menu ${isDarkMode ? 'dark' : ''}`}>
-          <div className="language-switcher">
-            {['de', 'en', 'es', 'it', 'fr'].map(lang => (
-              <button key={lang} onClick={() => changeLanguage(lang)}>
-                {lang === 'de' ? '🇩🇪' : lang === 'en' ? '🇬🇧' : lang === 'es' ? '🇪🇸' : lang === 'it' ? '🇮🇹' : '🇫🇷'}
-              </button>
-            ))}
+        <>
+          <div className="blur-overlay"></div>
+          <div className={`settings-menu ${isDarkMode ? 'dark' : ''}`}>
+            <div className="language-switcher">
+              {['de', 'en', 'es', 'it', 'fr'].map(lang => (
+                <button key={lang} onClick={() => changeLanguage(lang)}>
+                  {lang === 'de' ? '🇩🇪' : lang === 'en' ? '🇬🇧' : lang === 'es' ? '🇪🇸' : lang === 'it' ? '🇮🇹' : '🇫🇷'}
+                </button>
+              ))}
+            </div>
+            <div className="text-size-slider-container">
+              <span className="settings-emoji">🔎</span>
+              <input
+                type="range"
+                min="0"
+                max="2"
+                value={['small', 'medium', 'large'].indexOf(textSize).toString()}
+                onChange={handleTextSizeChange}
+                className="text-size-slider"
+              />
+            </div>
+            <div>
+              <span className="settings-emoji">🥷</span>
+              <label className="switch">
+                <input type="checkbox" checked={isDarkMode} onChange={toggleDarkMode} />
+                <span className="slider round"></span>
+              </label>
+            </div>
           </div>
-          <div className="text-size-slider-container">
-            <span className="settings-emoji">🔎</span>
-            <input
-              type="range"
-              min="0"
-              max="2"
-              value={['small', 'medium', 'large'].indexOf(textSize).toString()}
-              onChange={handleTextSizeChange}
-              className="text-size-slider"
-            />
-          </div>
-          <div>
-            <span className="settings-emoji">🥷</span>
-            <label className="switch">
-              <input type="checkbox" checked={isDarkMode} onChange={toggleDarkMode} />
-              <span className="slider round"></span>
-            </label>
-          </div>
-        </div>
+        </>
       )}
     </div>
   );
