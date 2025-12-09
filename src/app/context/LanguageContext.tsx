@@ -1,23 +1,35 @@
 "use client";
 
 import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
+import { getValidLanguage, SupportedLanguage, DEFAULT_LANGUAGE } from '../config/languages';
 
 interface LanguageContextProps {
-  language: string;
-  setLanguage: (language: string) => void;
+  language: SupportedLanguage;
+  setLanguage: (language: SupportedLanguage) => void;
 }
 
 const LanguageContext = createContext<LanguageContextProps | undefined>(undefined);
 
+const STORAGE_KEY = 'dog-rules-language';
+
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState('de');
+  const [language, setLanguageState] = useState<SupportedLanguage>(DEFAULT_LANGUAGE);
 
   useEffect(() => {
+    // Priority: URL param > localStorage > browser language > default
     const urlParams = new URLSearchParams(window.location.search);
     const queryLang = urlParams.get('lang');
-    const lang = queryLang || navigator.language.split('-')[0] || 'de';
-    setLanguage(lang);
+    const storedLang = localStorage.getItem(STORAGE_KEY);
+    const browserLang = navigator.language.split('-')[0];
+    
+    const lang = getValidLanguage(queryLang || storedLang || browserLang);
+    setLanguageState(lang);
   }, []);
+
+  const setLanguage = (newLanguage: SupportedLanguage) => {
+    setLanguageState(newLanguage);
+    localStorage.setItem(STORAGE_KEY, newLanguage);
+  };
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>

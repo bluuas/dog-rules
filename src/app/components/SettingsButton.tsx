@@ -2,10 +2,11 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { SUPPORTED_LANGUAGES, LANGUAGE_FLAGS, LANGUAGE_NAMES, SupportedLanguage } from '../config/languages';
 import '../styles/SettingsButton.css';
 
 const SettingsButton: React.FC = () => {
-  const { setLanguage } = useLanguage();
+  const { language, setLanguage } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [textSize, setTextSize] = useState('medium');
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -39,7 +40,7 @@ const SettingsButton: React.FC = () => {
 
   const toggleSettings = () => setIsOpen(!isOpen);
 
-  const changeLanguage = (lang: string) => setLanguage(lang);
+  const changeLanguage = (lang: SupportedLanguage) => setLanguage(lang);
 
   const changeTextSize = (size: string) => {
     setTextSize(size);
@@ -62,21 +63,32 @@ const SettingsButton: React.FC = () => {
 
   return (
     <div className="settings-container" ref={settingsRef}>
-      <button className={`settings-button ${isOpen ? 'rotate' : ''}`} onClick={toggleSettings}>
+      <button 
+        className={`settings-button ${isOpen ? 'rotate' : ''}`} 
+        onClick={toggleSettings}
+        aria-label="Settings"
+        aria-expanded={isOpen}
+      >
         {isOpen ? '✖' : '⚙️'}
       </button>
       {isOpen && (
         <>
           <div className={`settings-menu ${isDarkMode ? 'dark' : ''}`}>
             <div className="language-switcher">
-              {['de', 'en', 'es', 'it', 'fr'].map(lang => (
-                <button key={lang} onClick={() => changeLanguage(lang)}>
-                  {lang === 'de' ? '🇩🇪' : lang === 'en' ? '🇬🇧' : lang === 'es' ? '🇪🇸' : lang === 'it' ? '🇮🇹' : '🇫🇷'}
+              {SUPPORTED_LANGUAGES.map(lang => (
+                <button 
+                  key={lang} 
+                  onClick={() => changeLanguage(lang)}
+                  aria-label={`Switch to ${LANGUAGE_NAMES[lang]}`}
+                  title={LANGUAGE_NAMES[lang]}
+                  className={language === lang ? 'active' : ''}
+                >
+                  {LANGUAGE_FLAGS[lang]}
                 </button>
               ))}
             </div>
             <div className="text-size-slider-container">
-              <span className="settings-emoji">🔎</span>
+              <span className="settings-emoji" aria-label="Text size">🔎</span>
               <input
                 type="range"
                 min="0"
@@ -84,12 +96,18 @@ const SettingsButton: React.FC = () => {
                 value={['small', 'medium', 'large'].indexOf(textSize).toString()}
                 onChange={handleTextSizeChange}
                 className="text-size-slider"
+                aria-label="Adjust text size"
               />
             </div>
             <div>
-              <span className="settings-emoji">🥷</span>
+              <span className="settings-emoji" aria-label="Dark mode">🥷</span>
               <label className="switch">
-                <input type="checkbox" checked={isDarkMode} onChange={toggleDarkMode} />
+                <input 
+                  type="checkbox" 
+                  checked={isDarkMode} 
+                  onChange={toggleDarkMode}
+                  aria-label="Toggle dark mode"
+                />
                 <span className="slider round"></span>
               </label>
             </div>

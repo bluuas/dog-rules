@@ -3,13 +3,13 @@
 import React, { useEffect, useState } from 'react';
 import Card from './components/Card';
 import { useLanguage } from './context/LanguageContext';
-import translations from './i18n/translations';
+import { getTranslation } from './i18n/translations';
 import SettingsButton from './components/SettingsButton';
 
 const CardList: React.FC = () => {
   const { language } = useLanguage();
-  const cards = translations[language]?.cards || translations['en'].cards;
-  const generalRules = translations[language]?.general || translations['en'].general;
+  const translation = getTranslation(language);
+  const { cards, general: generalRules } = translation;
 
   return (
     <div>

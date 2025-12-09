@@ -1,0 +1,182 @@
+{
+  "title": "Reglas de DOG",
+  "description": "",
+  "cards": [
+    {
+      "id": 1,
+      "name": "Joker",
+      "letter": "J",
+      "emoji": "🃏",
+      "description": [
+        "Solo puede usarse como un Joker.",
+        "No se permite terminar el juego con un Joker."
+      ],
+      "detailed_description": []
+    },
+    {
+      "id": 2,
+      "name": "As",
+      "letter": "A",
+      "emoji": "♠",
+      "description": [
+        "Mover una canica desde el corral al inicio",
+        "Mover 1 hacia adelante",
+        "Mover 11 hacia adelante"
+      ],
+      "detailed_description": []
+    },
+    {
+      "id": 3,
+      "name": "Rey",
+      "letter": "K",
+      "emoji": "♠",
+      "description": [
+        "Mover una canica desde el corral al inicio",
+        "Mover 13 hacia adelante"
+      ],
+      "detailed_description": []
+    },
+    {
+      "id": 4,
+      "name": "Reina",
+      "letter": "Q",
+      "emoji": "♠",
+      "description": [
+        "Mover 12 hacia adelante",
+        "Copiar la carta superior del mazo. Esto solo copia la carta, no la acción"
+      ],
+      "detailed_description": [
+        "Por ejemplo, si el jugador anterior jugó un Joker y avanzó 6, el Joker copiado también puede usarse para otra cosa"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Sota",
+      "letter": "J",
+      "emoji": "♠",
+      "description": [
+        "Intercambiar dos canicas, ninguna de ellas tiene que ser tuya",
+        "Imán, avanza hasta alcanzar la siguiente canica"
+      ],
+      "detailed_description": [
+        "Las canicas recién colocadas en el inicio no se pueden intercambiar"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "10",
+      "letter": "10",
+      "emoji": "♠",
+      "description": [
+        "Mover 10 hacia adelante"
+      ],
+      "detailed_description": []
+    },
+    {
+      "id": 7,
+      "name": "9",
+      "letter": "9",
+      "emoji": "♠",
+      "description": [
+        "Mover 9 hacia adelante"
+      ],
+      "detailed_description": []
+    },
+    {
+      "id": 8,
+      "name": "8",
+      "letter": "8",
+      "emoji": "♠",
+      "description": [
+        "Mover 8 hacia adelante",
+        "Intercambiar todas las cartas en mano con otra persona"
+      ],
+      "detailed_description": [
+        "Puede bloquearse si la otra persona juega un <b>8</b>, <b>Q</b> o un 🃏",
+        "El bloqueo no cuenta como movimiento"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "7",
+      "letter": "7",
+      "emoji": "♠",
+      "description": [
+        "Mover 7 hacia adelante",
+        "Puede distribuirse a cualquier canica en el tablero"
+      ],
+      "detailed_description": [
+        "Las canicas recién colocadas en el inicio no pueden moverse",
+        "Debe usarse"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "6",
+      "letter": "6",
+      "emoji": "♠",
+      "description": [
+        "Mover 6 hacia adelante",
+        "Cambiar la dirección del juego (↪️/↩️)"
+      ],
+      "detailed_description": [
+        "Esto cambiará tanto la dirección de movimiento como la de colocación"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "5",
+      "letter": "5",
+      "emoji": "♠",
+      "description": [
+        "Mover 5 hacia adelante"
+      ],
+      "detailed_description": []
+    },
+    {
+      "id": 12,
+      "name": "4",
+      "letter": "4",
+      "emoji": "♠",
+      "description": [
+        "Mover 4 hacia adelante o hacia atrás"
+      ],
+      "detailed_description": [
+        "Está permitido llegar al objetivo retrocediendo por el inicio"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "3",
+      "letter": "3",
+      "emoji": "♠",
+      "description": [
+        "Mover 3 hacia adelante"
+      ],
+      "detailed_description": []
+    },
+    {
+      "id": 14,
+      "name": "2",
+      "letter": "2",
+      "emoji": "♠",
+      "description": [
+        "Mover 2 hacia adelante",
+        "Robar una carta de otra persona"
+      ],
+      "detailed_description": [
+        "Puede bloquearse si la otra persona juega un <b>2</b>, <b>Q</b> o un 🃏",
+        "El bloqueo no cuenta como movimiento"
+      ]
+    }
+  ],
+  "general": {
+    "title": "Reglas generales",
+    "description": [
+      "Cada ronda se juega con 6 cartas por persona",
+      "Carta jugada, carta queda",
+      "Pieza tocada, pieza movida",
+      "Las reglas oficiales se encuentran en: <a href=\"https://www.braendi-dog.de/en/braendi-dog-spielregeln-anleitungen.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.braendi-dog.de</a>"
+    ]
+  }
+}
