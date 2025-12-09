@@ -6,9 +6,24 @@
   --secondary-color: rgb(226, 223, 218);
   --font-title: var(--font-montserrat);
   --font-paragraph: var(--font-montserrat);
-  --text-small: 0.75rem; /* 12px */
-  --text-medium: 1rem; /* 16px */
+  
+  /* Text size settings - used by SettingsButton.tsx */
+  --text-small: 0.875rem; /* 14px */
+  --text-medium: 1rem; /* 16px (default) */
   --text-large: 1.125rem; /* 18px */
+}
+
+/* Apply text size to html element so it affects all rem-based sizes */
+html {
+  font-size: var(--text-medium);
+}
+
+html.text-small {
+  font-size: var(--text-small);
+}
+
+html.text-large {
+  font-size: var(--text-large);
 }
 
 @theme inline {

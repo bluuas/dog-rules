@@ -18,6 +18,14 @@ const SettingsButton: React.FC = () => {
     document.documentElement.classList.toggle('dark', darkMode);
     document.body.style.backgroundColor = darkMode ? 'var(--primary-color)' : 'var(--secondary-color)';
     document.body.style.color = darkMode ? 'var(--secondary-color)' : 'var(--primary-color)';
+    
+    // Load saved text size
+    const savedTextSize = localStorage.getItem('textSize') || 'medium';
+    setTextSize(savedTextSize);
+    document.documentElement.classList.remove('text-small', 'text-medium', 'text-large');
+    if (savedTextSize !== 'medium') {
+      document.documentElement.classList.add(`text-${savedTextSize}`);
+    }
   }, []);
 
   useEffect(() => {
@@ -42,7 +50,13 @@ const SettingsButton: React.FC = () => {
 
   const changeTextSize = (size: string) => {
     setTextSize(size);
-    document.documentElement.style.fontSize = `var(--text-${size})`;
+    // Remove all text size classes first
+    document.documentElement.classList.remove('text-small', 'text-medium', 'text-large');
+    // Add the new text size class
+    if (size !== 'medium') {
+      document.documentElement.classList.add(`text-${size}`);
+    }
+    localStorage.setItem('textSize', size);
   };
 
   const handleTextSizeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
