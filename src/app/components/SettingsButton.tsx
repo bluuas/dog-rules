@@ -29,8 +29,6 @@ const SettingsButton: React.FC = () => {
 
     if (isOpen) {
       document.addEventListener('mousedown', handleClickOutside);
-    } else {
-      document.removeEventListener('mousedown', handleClickOutside);
     }
 
     return () => {

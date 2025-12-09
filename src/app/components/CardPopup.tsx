@@ -14,9 +14,16 @@ interface CardPopupProps {
 
 const CardPopup: React.FC<CardPopupProps> = ({ card, onClose }) => {
   return (
-    <div className="popup" onClick={onClose}>
+    <div className="popup" onClick={onClose} role="dialog" aria-modal="true" aria-labelledby="card-title">
       <div className="popup-content text-black text-left" onClick={(e) => e.stopPropagation()}>
-        <div className="text-4xl text-black font-bold text-left">{card.emoji}{card.letter}</div>
+        <button 
+          onClick={onClose} 
+          className="absolute top-2 right-2 text-2xl font-bold hover:text-gray-600"
+          aria-label="Close"
+        >
+          ✕
+        </button>
+        <div id="card-title" className="text-4xl text-black font-bold text-left">{card.emoji}{card.letter}</div>
         <ul className="list-disc list-inside text-left">
           {card.description.map((desc, index) => (
             <li key={index}>{desc}</li>
