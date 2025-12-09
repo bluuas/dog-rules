@@ -1,23 +1,17 @@
 {
   "title": "Regole DOG",
   "description": "",
-  "cards": [
-    {
-      "id": 1,
+  "cards": {
+    "1": {
       "name": "Joker",
-      "letter": "J",
-      "emoji": "🃏",
       "description": [
         "Può essere usato solo come Joker.",
         "Non è consentito terminare il gioco con un Joker."
       ],
       "detailed_description": []
     },
-    {
-      "id": 2,
+    "2": {
       "name": "Asso",
-      "letter": "A",
-      "emoji": "♠",
       "description": [
         "Muovere una biglia dal recinto all'inizio",
         "Muovere 1 in avanti",
@@ -25,22 +19,16 @@
       ],
       "detailed_description": []
     },
-    {
-      "id": 3,
+    "3": {
       "name": "Re",
-      "letter": "K",
-      "emoji": "♠",
       "description": [
         "Muovere una biglia dal recinto all'inizio",
         "Muovere 13 in avanti"
       ],
       "detailed_description": []
     },
-    {
-      "id": 4,
+    "4": {
       "name": "Regina",
-      "letter": "Q",
-      "emoji": "♠",
       "description": [
         "Muovere 12 in avanti",
         "Copiare la carta in cima al mazzo. Questo copia solo la carta, non l'azione"
@@ -49,11 +37,8 @@
         "Ad esempio, se il giocatore precedente ha giocato un Joker e ha avanzato di 6, il Joker copiato può anche essere utilizzato per altro"
       ]
     },
-    {
-      "id": 5,
+    "5": {
       "name": "Fante",
-      "letter": "J",
-      "emoji": "♠",
       "description": [
         "Scambiare due biglie, nessuna delle quali deve essere la tua",
         "Magnete, muovi fino a raggiungere la prossima biglia"
@@ -62,31 +47,22 @@
         "Le biglie appena piazzate all'inizio non possono essere scambiate"
       ]
     },
-    {
-      "id": 6,
+    "6": {
       "name": "10",
-      "letter": "10",
-      "emoji": "♠",
       "description": [
         "Muovere 10 in avanti"
       ],
       "detailed_description": []
     },
-    {
-      "id": 7,
+    "7": {
       "name": "9",
-      "letter": "9",
-      "emoji": "♠",
       "description": [
         "Muovere 9 in avanti"
       ],
       "detailed_description": []
     },
-    {
-      "id": 8,
+    "8": {
       "name": "8",
-      "letter": "8",
-      "emoji": "♠",
       "description": [
         "Muovere 8 in avanti",
         "Scambiare tutte le carte in mano con qualcun altro"
@@ -96,11 +72,8 @@
         "Il blocco non conta come mossa"
       ]
     },
-    {
-      "id": 9,
+    "9": {
       "name": "7",
-      "letter": "7",
-      "emoji": "♠",
       "description": [
         "Muovere 7 in avanti",
         "Può essere distribuito a tutte le biglie sul tabellone"
@@ -110,11 +83,8 @@
         "Deve essere utilizzato"
       ]
     },
-    {
-      "id": 10,
+    "10": {
       "name": "6",
-      "letter": "6",
-      "emoji": "♠",
       "description": [
         "Muovere 6 in avanti",
         "Cambiare direzione del gioco (↪️/↩️)"
@@ -123,21 +93,15 @@
         "Questo cambierà sia la direzione del movimento che della disposizione"
       ]
     },
-    {
-      "id": 11,
+    "11": {
       "name": "5",
-      "letter": "5",
-      "emoji": "♠",
       "description": [
         "Muovere 5 in avanti"
       ],
       "detailed_description": []
     },
-    {
-      "id": 12,
+    "12": {
       "name": "4",
-      "letter": "4",
-      "emoji": "♠",
       "description": [
         "Muovere 4 in avanti o indietro"
       ],
@@ -145,21 +109,15 @@
         "È consentito raggiungere l'obiettivo indietro passando per l'inizio"
       ]
     },
-    {
-      "id": 13,
+    "13": {
       "name": "3",
-      "letter": "3",
-      "emoji": "♠",
       "description": [
         "Muovere 3 in avanti"
       ],
       "detailed_description": []
     },
-    {
-      "id": 14,
+    "14": {
       "name": "2",
-      "letter": "2",
-      "emoji": "♠",
       "description": [
         "Muovere 2 in avanti",
         "Rubare una carta da qualcun altro"
@@ -169,7 +127,7 @@
         "Il blocco non conta come mossa"
       ]
     }
-  ],
+  },
   "general": {
     "title": "Regole generali",
     "description": [

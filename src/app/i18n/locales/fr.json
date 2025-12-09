@@ -1,23 +1,17 @@
 {
   "title": "Règles du DOG",
   "description": "",
-  "cards": [
-    {
-      "id": 1,
+  "cards": {
+    "1": {
       "name": "Joker",
-      "letter": "J",
-      "emoji": "🃏",
       "description": [
         "Ne peut être utilisé que comme Joker.",
         "Il est interdit de terminer la partie avec un Joker."
       ],
       "detailed_description": []
     },
-    {
-      "id": 2,
+    "2": {
       "name": "As",
-      "letter": "A",
-      "emoji": "♠",
       "description": [
         "Déplacer une bille du chenil au départ",
         "Avancer de 1",
@@ -25,22 +19,16 @@
       ],
       "detailed_description": []
     },
-    {
-      "id": 3,
+    "3": {
       "name": "Roi",
-      "letter": "K",
-      "emoji": "♠",
       "description": [
         "Déplacer une bille du chenil au départ",
         "Avancer de 13"
       ],
       "detailed_description": []
     },
-    {
-      "id": 4,
+    "4": {
       "name": "Dame",
-      "letter": "Q",
-      "emoji": "♠",
       "description": [
         "Avancer de 12",
         "Copier la carte du dessus de la pile. Cela ne copie que la carte, pas l'action"
@@ -49,11 +37,8 @@
         "Par exemple, si le joueur précédent a joué un Joker et a avancé de 6, le Joker copié peut également être utilisé pour autre chose"
       ]
     },
-    {
-      "id": 5,
+    "5": {
       "name": "Valet",
-      "letter": "J",
-      "emoji": "♠",
       "description": [
         "Échanger deux billes, aucune d'entre elles n'a besoin d'être la vôtre",
         "Aimant, avancez jusqu'à rattraper la prochaine bille"
@@ -62,31 +47,22 @@
         "Les billes placées récemment sur le départ ne peuvent pas être échangées"
       ]
     },
-    {
-      "id": 6,
+    "6": {
       "name": "10",
-      "letter": "10",
-      "emoji": "♠",
       "description": [
         "Avancer de 10"
       ],
       "detailed_description": []
     },
-    {
-      "id": 7,
+    "7": {
       "name": "9",
-      "letter": "9",
-      "emoji": "♠",
       "description": [
         "Avancer de 9"
       ],
       "detailed_description": []
     },
-    {
-      "id": 8,
+    "8": {
       "name": "8",
-      "letter": "8",
-      "emoji": "♠",
       "description": [
         "Avancer de 8",
         "Échanger toutes les cartes en main avec quelqu'un d'autre"
@@ -96,11 +72,8 @@
         "Le blocage ne compte pas comme un mouvement"
       ]
     },
-    {
-      "id": 9,
+    "9": {
       "name": "7",
-      "letter": "7",
-      "emoji": "♠",
       "description": [
         "Avancer de 7",
         "Peut être distribué à toutes les billes sur le plateau"
@@ -110,11 +83,8 @@
         "Doit être utilisé"
       ]
     },
-    {
-      "id": 10,
+    "10": {
       "name": "6",
-      "letter": "6",
-      "emoji": "♠",
       "description": [
         "Avancer de 6",
         "Changer la direction du jeu (↪️/↩️)"
@@ -123,21 +93,15 @@
         "Cela changera à la fois la direction de déplacement et la direction de placement"
       ]
     },
-    {
-      "id": 11,
+    "11": {
       "name": "5",
-      "letter": "5",
-      "emoji": "♠",
       "description": [
         "Avancer de 5"
       ],
       "detailed_description": []
     },
-    {
-      "id": 12,
+    "12": {
       "name": "4",
-      "letter": "4",
-      "emoji": "♠",
       "description": [
         "Avancer de 4 ou reculer"
       ],
@@ -145,21 +109,15 @@
         "Il est permis d'atteindre l'objectif en reculant via le départ"
       ]
     },
-    {
-      "id": 13,
+    "13": {
       "name": "3",
-      "letter": "3",
-      "emoji": "♠",
       "description": [
         "Avancer de 3"
       ],
       "detailed_description": []
     },
-    {
-      "id": 14,
+    "14": {
       "name": "2",
-      "letter": "2",
-      "emoji": "♠",
       "description": [
         "Avancer de 2",
         "Voler une carte à quelqu'un d'autre"
@@ -169,7 +127,7 @@
         "Le blocage ne compte pas comme un mouvement"
       ]
     }
-  ],
+  },
   "general": {
     "title": "Règles générales",
     "description": [

@@ -1,23 +1,17 @@
 {
   "title": "DOG Regeln",
   "description": "Generiert durch create next app",
-  "cards": [
-    {
-      "id": 1,
+  "cards": {
+    "1": {
       "name": "Joker",
-      "letter": "J",
-      "emoji": "🃏",
       "description": [
         "Kann nur als Joker verwendet werden.",
         "Es ist nicht erlaubt, das Spiel mit einem Joker zu beenden."
       ],
       "detailed_description": []
     },
-    {
-      "id": 2,
+    "2": {
       "name": "Ass",
-      "letter": "A",
-      "emoji": "♠",
       "description": [
         "Murmel vom Zwinger zum Start",
         "1 vorwärts fahren",
@@ -25,22 +19,16 @@
       ],
       "detailed_description": []
     },
-    {
-      "id": 3,
+    "3": {
       "name": "König",
-      "letter": "K",
-      "emoji": "♠",
       "description": [
         "Murmel vom Zwinger zum Start",
         "13 vorwärts fahren"
       ],
       "detailed_description": []
     },
-    {
-      "id": 4,
+    "4": {
       "name": "Dame",
-      "letter": "Q",
-      "emoji": "♠",
       "description": [
         "12 vorwärts fahren",
         "die oberste Karte auf dem Stapel kopieren. Dies kopiert nur die Karte, nicht die Aktion"
@@ -49,11 +37,8 @@
         "Wenn zum Beispiel der vorherige Spieler einen Joker gespielt und 6 vorwärts bewegt hat, kann der kopierte Joker auch für etwas anderes verwendet werden"
       ]
     },
-    {
-      "id": 5,
+    "5": {
       "name": "Bube",
-      "letter": "J",
-      "emoji": "♠",
       "description": [
         "Zwei Murmeln austauschen, keine davon muss deine eigene sein",
         "Magnet, aufschliessen bis zur nächsten Murmel"
@@ -62,31 +47,22 @@
         "frisch auf den Start gesetzte Murmeln dürfen nicht ausgetauscht werden"
       ]
     },
-    {
-      "id": 6,
+    "6": {
       "name": "10",
-      "letter": "10",
-      "emoji": "♠",
       "description": [
         "10 vorwärts fahren"
       ],
       "detailed_description": []
     },
-    {
-      "id": 7,
+    "7": {
       "name": "9",
-      "letter": "9",
-      "emoji": "♠",
       "description": [
         "9 vorwärts fahren"
       ],
       "detailed_description": []
     },
-    {
-      "id": 8,
+    "8": {
       "name": "8",
-      "letter": "8",
-      "emoji": "♠",
       "description": [
         "8 vorwärts fahren",
         "alle Handkarten mit jemand anderem tauschen"
@@ -96,11 +72,8 @@
         "abwehren zählt nicht als Zug"
       ]
     },
-    {
-      "id": 9,
+    "9": {
       "name": "7",
-      "letter": "7",
-      "emoji": "♠",
       "description": [
         "7 vorwärts fahren",
         "kann auf alle Murmeln auf dem Brett verteilt werden"
@@ -110,11 +83,8 @@
         "muss ausgefahren werden"
       ]
     },
-    {
-      "id": 10,
+    "10": {
       "name": "6",
-      "letter": "6",
-      "emoji": "♠",
       "description": [
         "6 vorwärts fahren",
         "Richtung des Spiels ändern (↪️/↩️)"
@@ -123,21 +93,15 @@
         "dabei wird sowohl die Fahrtrichtung, als auch die Legerichtung gedreht"
       ]
     },
-    {
-      "id": 11,
+    "11": {
       "name": "5",
-      "letter": "5",
-      "emoji": "♠",
       "description": [
         "5 vorwärts fahren"
       ],
       "detailed_description": []
     },
-    {
-      "id": 12,
+    "12": {
       "name": "4",
-      "letter": "4",
-      "emoji": "♠",
       "description": [
         "4 vorwärts oder rückwärts fahren"
       ],
@@ -145,21 +109,15 @@
         "es ist erlaubt, das Ziel rückwärts über den Start zu erreichen"
       ]
     },
-    {
-      "id": 13,
+    "13": {
       "name": "3",
-      "letter": "3",
-      "emoji": "♠",
       "description": [
         "3 vorwärts fahren"
       ],
       "detailed_description": []
     },
-    {
-      "id": 14,
+    "14": {
       "name": "2",
-      "letter": "2",
-      "emoji": "♠",
       "description": [
         "2 vorwärts fahren",
         "eine einzelne Karte von jemand anderem stehlen"
@@ -169,7 +127,7 @@
         "abwehren zählt nicht als Zug"
       ]
     }
-  ],
+  },
   "general": {
     "title": "Allgemeine Regeln",
     "description": [

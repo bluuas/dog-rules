@@ -1,23 +1,17 @@
 {
   "title": "DOG Rules",
   "description": "",
-  "cards": [
-    {
-      "id": 1,
+  "cards": {
+    "1": {
       "name": "Joker",
-      "letter": "J",
-      "emoji": "🃏",
       "description": [
         "Can only be used as a Joker.",
         "It is not allowed to end the game with a Joker."
       ],
       "detailed_description": []
     },
-    {
-      "id": 2,
+    "2": {
       "name": "Ace",
-      "letter": "A",
-      "emoji": "♠",
       "description": [
         "Move a marble from the kennel to the start",
         "Move 1 forward",
@@ -25,22 +19,16 @@
       ],
       "detailed_description": []
     },
-    {
-      "id": 3,
+    "3": {
       "name": "King",
-      "letter": "K",
-      "emoji": "♠",
       "description": [
         "Move a marble from the kennel to the start",
         "Move 13 forward"
       ],
       "detailed_description": []
     },
-    {
-      "id": 4,
+    "4": {
       "name": "Queen",
-      "letter": "Q",
-      "emoji": "♠",
       "description": [
         "Move 12 forward",
         "Copy the top card from the stack. This only copies the card, not the action"
@@ -49,11 +37,8 @@
         "For example, if the previous player played a Joker and moved 6 forward, the copied Joker can also be used for something else"
       ]
     },
-    {
-      "id": 5,
+    "5": {
       "name": "Jack",
-      "letter": "J",
-      "emoji": "♠",
       "description": [
         "Swap two marbles, none of them have to be your own",
         "Magnet, catch up to the next marble"
@@ -62,31 +47,22 @@
         "Marbles freshly placed on the start cannot be swapped"
       ]
     },
-    {
-      "id": 6,
+    "6": {
       "name": "10",
-      "letter": "10",
-      "emoji": "♠",
       "description": [
         "Move 10 forward"
       ],
       "detailed_description": []
     },
-    {
-      "id": 7,
+    "7": {
       "name": "9",
-      "letter": "9",
-      "emoji": "♠",
       "description": [
         "Move 9 forward"
       ],
       "detailed_description": []
     },
-    {
-      "id": 8,
+    "8": {
       "name": "8",
-      "letter": "8",
-      "emoji": "♠",
       "description": [
         "Move 8 forward",
         "Swap all hand cards with someone else"
@@ -96,11 +72,8 @@
         "Blocking does not count as a move"
       ]
     },
-    {
-      "id": 9,
+    "9": {
       "name": "7",
-      "letter": "7",
-      "emoji": "♠",
       "description": [
         "Move 7 forward",
         "Can be distributed to any marbles on the board"
@@ -110,11 +83,8 @@
         "Must be used up"
       ]
     },
-    {
-      "id": 10,
+    "10": {
       "name": "6",
-      "letter": "6",
-      "emoji": "♠",
       "description": [
         "Move 6 forward",
         "Change the direction of the game (↪️/↩️)"
@@ -123,21 +93,15 @@
         "This will change both the direction of movement and placement"
       ]
     },
-    {
-      "id": 11,
+    "11": {
       "name": "5",
-      "letter": "5",
-      "emoji": "♠",
       "description": [
         "Move 5 forward"
       ],
       "detailed_description": []
     },
-    {
-      "id": 12,
+    "12": {
       "name": "4",
-      "letter": "4",
-      "emoji": "♠",
       "description": [
         "Move 4 forward or backward"
       ],
@@ -145,21 +109,15 @@
         "It is allowed to reach the goal backward via the start"
       ]
     },
-    {
-      "id": 13,
+    "13": {
       "name": "3",
-      "letter": "3",
-      "emoji": "♠",
       "description": [
         "Move 3 forward"
       ],
       "detailed_description": []
     },
-    {
-      "id": 14,
+    "14": {
       "name": "2",
-      "letter": "2",
-      "emoji": "♠",
       "description": [
         "Move 2 forward",
         "Steal a single card from someone else"
@@ -169,7 +127,7 @@
         "Blocking does not count as a move"
       ]
     }
-  ],
+  },
   "general": {
     "title": "General rules",
     "description": [

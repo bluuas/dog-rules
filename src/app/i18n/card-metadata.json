@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "letter": "J",
+    "emoji": "🃏"
+  },
+  {
+    "id": 2,
+    "letter": "A",
+    "emoji": "♠"
+  },
+  {
+    "id": 3,
+    "letter": "K",
+    "emoji": "♠"
+  },
+  {
+    "id": 4,
+    "letter": "Q",
+    "emoji": "♠"
+  },
+  {
+    "id": 5,
+    "letter": "J",
+    "emoji": "♠"
+  },
+  {
+    "id": 6,
+    "letter": "10",
+    "emoji": "♠"
+  },
+  {
+    "id": 7,
+    "letter": "9",
+    "emoji": "♠"
+  },
+  {
+    "id": 8,
+    "letter": "8",
+    "emoji": "♠"
+  },
+  {
+    "id": 9,
+    "letter": "7",
+    "emoji": "♠"
+  },
+  {
+    "id": 10,
+    "letter": "6",
+    "emoji": "♠"
+  },
+  {
+    "id": 11,
+    "letter": "5",
+    "emoji": "♠"
+  },
+  {
+    "id": 12,
+    "letter": "4",
+    "emoji": "♠"
+  },
+  {
+    "id": 13,
+    "letter": "3",
+    "emoji": "♠"
+  },
+  {
+    "id": 14,
+    "letter": "2",
+    "emoji": "♠"
+  }
+]
