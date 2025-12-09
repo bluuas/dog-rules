@@ -1,0 +1,140 @@
+{
+  "title": "DOG Regler",
+  "description": "",
+  "cards": {
+    "1": {
+      "name": "Joker",
+      "description": [
+        "Kan endast användas som Joker.",
+        "Det är inte tillåtet att avsluta spelet med en Joker."
+      ],
+      "detailed_description": []
+    },
+    "2": {
+      "name": "Ess",
+      "description": [
+        "Flytta en kula från hunden till start",
+        "Flytta 1 framåt",
+        "Flytta 11 framåt"
+      ],
+      "detailed_description": []
+    },
+    "3": {
+      "name": "Kung",
+      "description": [
+        "Flytta en kula från hunden till start",
+        "Flytta 13 framåt"
+      ],
+      "detailed_description": []
+    },
+    "4": {
+      "name": "Dam",
+      "description": [
+        "Flytta 12 framåt",
+        "Kopiera det översta kortet från högen. Detta kopierar bara kortet, inte handlingen"
+      ],
+      "detailed_description": [
+        "Om till exempel den föregående spelaren spelade en Joker och flyttade 6 framåt, kan den kopierade Jokern också användas för något annat"
+      ]
+    },
+    "5": {
+      "name": "Knekt",
+      "description": [
+        "Byt två kulor, ingen av dem behöver vara din egen",
+        "Magnet, ta igen till nästa kula"
+      ],
+      "detailed_description": [
+        "Kulor som precis placerats på start kan inte bytas"
+      ]
+    },
+    "6": {
+      "name": "10",
+      "description": [
+        "Flytta 10 framåt"
+      ],
+      "detailed_description": []
+    },
+    "7": {
+      "name": "9",
+      "description": [
+        "Flytta 9 framåt"
+      ],
+      "detailed_description": []
+    },
+    "8": {
+      "name": "8",
+      "description": [
+        "Flytta 8 framåt",
+        "Byt alla handkort med någon annan"
+      ],
+      "detailed_description": [
+        "Kan blockeras om den andra personen spelar en <b>8</b>, <b>Q</b> eller en 🃏",
+        "Blockering räknas inte som ett drag"
+      ]
+    },
+    "9": {
+      "name": "7",
+      "description": [
+        "Flytta 7 framåt",
+        "Kan fördelas till alla kulor på brädet"
+      ],
+      "detailed_description": [
+        "Kulor som precis placerats på start kan inte flyttas",
+        "Måste användas"
+      ]
+    },
+    "10": {
+      "name": "6",
+      "description": [
+        "Flytta 6 framåt",
+        "Ändra spelets riktning (↪️/↩️)"
+      ],
+      "detailed_description": [
+        "Detta ändrar både rörelseriktningen och placeringsinriktningen"
+      ]
+    },
+    "11": {
+      "name": "5",
+      "description": [
+        "Flytta 5 framåt"
+      ],
+      "detailed_description": []
+    },
+    "12": {
+      "name": "4",
+      "description": [
+        "Flytta 4 framåt eller bakåt"
+      ],
+      "detailed_description": [
+        "Det är tillåtet att nå målet bakåt via start"
+      ]
+    },
+    "13": {
+      "name": "3",
+      "description": [
+        "Flytta 3 framåt"
+      ],
+      "detailed_description": []
+    },
+    "14": {
+      "name": "2",
+      "description": [
+        "Flytta 2 framåt",
+        "Stjäl ett enda kort från någon annan"
+      ],
+      "detailed_description": [
+        "Kan blockeras om den andra personen spelar en <b>2</b>, <b>Q</b> eller en 🃏",
+        "Blockering räknas inte som ett drag"
+      ]
+    }
+  },
+  "general": {
+    "title": "Allmänna regler",
+    "description": [
+      "Varje runda spelas med 6 kort per person",
+      "Spelat är spelat",
+      "Rört är fört",
+      "Officiella regler finns på: <a href=\"https://www.braendi-dog.de/en/braendi-dog-spielregeln-anleitungen.html\" target=\"_blank\" rel=\"noopener noreferrer\">www.braendi-dog.de</a>"
+    ]
+  }
+}

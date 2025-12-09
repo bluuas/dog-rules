@@ -5,6 +5,7 @@ import enTranslations from './locales/en.json';
 import esTranslations from './locales/es.json';
 import itTranslations from './locales/it.json';
 import frTranslations from './locales/fr.json';
+import svTranslations from './locales/sv.json';
 
 interface CardMetadata {
   id: number;
@@ -83,6 +84,7 @@ const translations: Translations = {
   es: mergeCardsWithMetadata(esTranslations as LanguageData),
   it: mergeCardsWithMetadata(itTranslations as LanguageData),
   fr: mergeCardsWithMetadata(frTranslations as LanguageData),
+  sv: mergeCardsWithMetadata(svTranslations as LanguageData),
 };
 
 /**
