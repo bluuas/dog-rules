@@ -136,5 +136,19 @@
       "pièce touchée, pièce jouée",
       "Trouvez plus de règles sur: <a href=\"https://www.braendi-dog.de/en/braendi-dog-spielregeln-anleitungen.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.braendi-dog.de</a>"
     ]
+  },
+  "ui": {
+    "viewDetails": "Voir les détails de {name}",
+    "close": "Fermer",
+    "settings": "Paramètres",
+    "language": "Langue",
+    "switchTo": "Passer à {language}",
+    "textSize": "Taille du texte",
+    "textSizeSmall": "Petite",
+    "textSizeMedium": "Moyenne",
+    "textSizeLarge": "Grande",
+    "darkMode": "Mode sombre",
+    "readAloud": "Lire à voix haute",
+    "stopReading": "Arrêter la lecture"
   }
 }

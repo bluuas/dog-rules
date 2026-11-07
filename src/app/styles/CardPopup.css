@@ -26,10 +26,15 @@
   overflow-y: auto;
 }
 
-.popup-content button[aria-label="Close"] {
+/* The dialog itself takes focus when it opens; the visible focus ring belongs on its controls. */
+.popup-content:focus {
+  outline: none;
+}
+
+.popup-content .popup-close,
+.popup-content .popup-speak {
   position: absolute;
   top: 8px;
-  right: 8px;
   background: none;
   border: none;
   font-size: 1.5rem;
@@ -40,7 +45,15 @@
   transition: color 0.2s;
 }
 
-.popup-content button[aria-label="Close"]:hover {
+.popup-content .popup-close {
+  right: 8px;
+}
+
+.popup-content .popup-speak {
+  right: 48px;
+}
+
+.popup-content .popup-close:hover {
   color: #000;
 }
 

@@ -136,5 +136,19 @@
       "Pezzo toccato, pezzo mosso",
       "Trova altre regole su: <a href=\"https://www.braendi-dog.de/en/braendi-dog-spielregeln-anleitungen.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.braendi-dog.de/</a>"
     ]
+  },
+  "ui": {
+    "viewDetails": "Mostra i dettagli di {name}",
+    "close": "Chiudi",
+    "settings": "Impostazioni",
+    "language": "Lingua",
+    "switchTo": "Passa a {language}",
+    "textSize": "Dimensione del testo",
+    "textSizeSmall": "Piccolo",
+    "textSizeMedium": "Medio",
+    "textSizeLarge": "Grande",
+    "darkMode": "Modalità scura",
+    "readAloud": "Leggi ad alta voce",
+    "stopReading": "Interrompi la lettura"
   }
 }

@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import CardPopup from './CardPopup';
+import { useLanguage } from '../context/LanguageContext';
+import { getTranslation, interpolate } from '../i18n/translations';
 
 interface CardProps {
   name: string;
@@ -13,6 +15,8 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ name, letter, emoji, description, detailed_description }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { language } = useLanguage();
+  const { ui } = getTranslation(language);
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = useCallback(() => setIsModalOpen(false), []);
@@ -32,19 +36,26 @@ const Card: React.FC<CardProps> = ({ name, letter, emoji, description, detailed_
 
   return (
     <>
-      <div 
-        className="flex items-center p-4 cursor-pointer" 
-        onClick={openModal}
-        role="button"
-        tabIndex={0}
-        onKeyDown={(e) => e.key === 'Enter' && openModal()}
-        aria-label={`View details for ${name}`}
-      >
-        <div className="relative min-w-20 min-h-30 aspect-w-1 aspect-h-1 bg-white bg-opacity-10 backdrop-blur-md rounded-lg border border-gray-300 shadow-lg flex items-center justify-center">
-          <div className="absolute top-2 left-2 text-2xl font-bold text-black">{letter}</div>
-          <div className="text-4xl text-black">{emoji}</div>
-          <div className="absolute bottom-2 right-2 text-2xl font-bold text-black">{letter}</div>
-        </div>
+      {/*
+        The whole row stays clickable for pointer users, but only the card face is a button.
+        A button's children are hidden from screen readers, so making the whole row a button
+        would have swallowed the rules next to it.
+      */}
+      <article className="flex items-center p-4 cursor-pointer" onClick={openModal}>
+        <h2 className="sr-only">{name}</h2>
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            openModal();
+          }}
+          aria-label={interpolate(ui.viewDetails, { name })}
+          className="relative min-w-20 min-h-30 aspect-w-1 aspect-h-1 bg-white bg-opacity-10 backdrop-blur-md rounded-lg border border-gray-300 shadow-lg flex items-center justify-center cursor-pointer"
+        >
+          <span className="absolute top-2 left-2 text-2xl font-bold text-black">{letter}</span>
+          <span className="text-4xl text-black">{emoji}</span>
+          <span className="absolute bottom-2 right-2 text-2xl font-bold text-black">{letter}</span>
+        </button>
         <div className="ml-4">
           <ul className="list-disc list-inside">
             {description.map((desc, index) => (
@@ -52,12 +63,10 @@ const Card: React.FC<CardProps> = ({ name, letter, emoji, description, detailed_
             ))}
           </ul>
         </div>
-      </div>
+      </article>
 
       {isModalOpen && (
-        <div className="fixed inset-0 flex items-start justify-center z-50" onClick={closeModal}>
-          <CardPopup card={{ name, letter, emoji, description, detailed_description }} onClose={closeModal} />
-        </div>
+        <CardPopup card={{ name, letter, emoji, description, detailed_description }} onClose={closeModal} />
       )}
     </>
   );

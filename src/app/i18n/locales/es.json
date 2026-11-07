@@ -136,5 +136,19 @@
       "Pieza tocada, pieza movida",
       "Las reglas oficiales se encuentran en: <a href=\"https://www.braendi-dog.de/en/braendi-dog-spielregeln-anleitungen.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.braendi-dog.de</a>"
     ]
+  },
+  "ui": {
+    "viewDetails": "Ver detalles de {name}",
+    "close": "Cerrar",
+    "settings": "Ajustes",
+    "language": "Idioma",
+    "switchTo": "Cambiar a {language}",
+    "textSize": "Tamaño del texto",
+    "textSizeSmall": "Pequeño",
+    "textSizeMedium": "Mediano",
+    "textSizeLarge": "Grande",
+    "darkMode": "Modo oscuro",
+    "readAloud": "Leer en voz alta",
+    "stopReading": "Detener la lectura"
   }
 }

@@ -26,6 +26,12 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     setLanguageState(lang);
   }, []);
 
+  // Screen readers choose their pronunciation from the document language,
+  // so it has to follow the selected language rather than stay at the static "en".
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
+
   const setLanguage = (newLanguage: SupportedLanguage) => {
     setLanguageState(newLanguage);
     localStorage.setItem(STORAGE_KEY, newLanguage);

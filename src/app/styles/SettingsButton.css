@@ -117,3 +117,13 @@ input:checked + .slider:before {
   gap: 1rem;
   font-size: 1.25rem;
 }
+/* The selected language was only marked with a class before; now it is visible as well. */
+.language-switcher button.active {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.settings-menu.dark .language-switcher button.active {
+  outline-color: var(--secondary-color);
+}

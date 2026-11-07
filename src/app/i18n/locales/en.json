@@ -136,5 +136,19 @@
       "Touched is played",
       "Find more rules at: <a href=\"https://www.braendi-dog.de/en/braendi-dog-spielregeln-anleitungen.html\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.braendi-dog.de</a>"
     ]
+  },
+  "ui": {
+    "viewDetails": "View details for {name}",
+    "close": "Close",
+    "settings": "Settings",
+    "language": "Language",
+    "switchTo": "Switch to {language}",
+    "textSize": "Text size",
+    "textSizeSmall": "Small",
+    "textSizeMedium": "Medium",
+    "textSizeLarge": "Large",
+    "darkMode": "Dark mode",
+    "readAloud": "Read aloud",
+    "stopReading": "Stop reading"
   }
 }

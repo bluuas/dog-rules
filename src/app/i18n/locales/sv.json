@@ -136,5 +136,19 @@
       "Rört är fört",
       "Officiella regler finns på: <a href=\"https://www.braendi-dog.de/en/braendi-dog-spielregeln-anleitungen.html\" target=\"_blank\" rel=\"noopener noreferrer\">www.braendi-dog.de</a>"
     ]
+  },
+  "ui": {
+    "viewDetails": "Visa detaljer för {name}",
+    "close": "Stäng",
+    "settings": "Inställningar",
+    "language": "Språk",
+    "switchTo": "Byt till {language}",
+    "textSize": "Textstorlek",
+    "textSizeSmall": "Liten",
+    "textSizeMedium": "Medel",
+    "textSizeLarge": "Stor",
+    "darkMode": "Mörkt läge",
+    "readAloud": "Läs upp",
+    "stopReading": "Sluta läsa upp"
   }
 }

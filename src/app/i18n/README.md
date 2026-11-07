@@ -13,7 +13,8 @@ src/app/i18n/
 │   ├── en.json                 # English translations (text only)
 │   ├── es.json                 # Spanish translations (text only)
 │   ├── it.json                 # Italian translations (text only)
-│   └── fr.json                 # French translations (text only)
+│   ├── fr.json                 # French translations (text only)
+│   └── sv.json                 # Swedish translations (text only)
 └── translations.ts             # Merges metadata + translations
 ```
 
@@ -53,6 +54,25 @@ src/app/i18n/
 }
 ```
 
+### 3. UI Strings (`ui` in each language file)
+Labels that screen readers announce for controls without visible text: icon buttons, the text size slider, the dialog title. `{name}` and `{language}` are placeholders filled in at runtime with `interpolate()` from `translations.ts`. Any key a language leaves out falls back to English.
+```json
+"ui": {
+  "viewDetails": "View details for {name}",
+  "close": "Close",
+  "settings": "Settings",
+  "language": "Language",
+  "switchTo": "Switch to {language}",
+  "textSize": "Text size",
+  "textSizeSmall": "Small",
+  "textSizeMedium": "Medium",
+  "textSizeLarge": "Large",
+  "darkMode": "Dark mode",
+  "readAloud": "Read aloud",
+  "stopReading": "Stop reading"
+}
+```
+
 ## Benefits
 
 ✅ **Easy synchronization**: Card structure (id, emoji, letter) defined once  
@@ -87,7 +107,7 @@ If you need to change emoji or letter:
 
 ## How to Add a New Language
 
-1. Create `locales/XX.json` with the same structure as `en.json`
+1. Create `locales/XX.json` with the same structure as `en.json`, including the `ui` block
 2. Add language to `config/languages.ts`
 3. Import in `translations.ts` and add to merge function
 

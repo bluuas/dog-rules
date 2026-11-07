@@ -1,4 +1,4 @@
-import { SupportedLanguage, DEFAULT_LANGUAGE } from '../config/languages';
+import { DEFAULT_LANGUAGE } from '../config/languages';
 import cardMetadata from './card-metadata.json';
 import deTranslations from './locales/de.json';
 import enTranslations from './locales/en.json';
@@ -28,6 +28,26 @@ export interface Card {
   detailed_description: string[];
 }
 
+/**
+ * Labels for controls that are not visible as text (icon buttons, sliders, dialog titles).
+ * Screen readers announce these, so they must follow the selected language.
+ * `{name}` and `{language}` placeholders are filled in with `interpolate()`.
+ */
+export interface UIStrings {
+  viewDetails: string;
+  close: string;
+  settings: string;
+  language: string;
+  switchTo: string;
+  textSize: string;
+  textSizeSmall: string;
+  textSizeMedium: string;
+  textSizeLarge: string;
+  darkMode: string;
+  readAloud: string;
+  stopReading: string;
+}
+
 interface LanguageData {
   title: string;
   description: string;
@@ -38,6 +58,7 @@ interface LanguageData {
     title: string;
     description: string[];
   };
+  ui?: Partial<UIStrings>;
 }
 
 export interface Translation {
@@ -48,11 +69,15 @@ export interface Translation {
     title: string;
     description: string[];
   };
+  ui: UIStrings;
 }
 
 export interface Translations {
   [key: string]: Translation;
 }
+
+// English is the fallback for any UI string a language file leaves out.
+const defaultUI: UIStrings = enTranslations.ui;
 
 /**
  * Merge card metadata with translations
@@ -75,6 +100,7 @@ function mergeCardsWithMetadata(langData: LanguageData): Translation {
     description: langData.description,
     cards,
     general: langData.general,
+    ui: { ...defaultUI, ...langData.ui },
   };
 }
 
@@ -99,6 +125,14 @@ export function getTranslation(language: string): Translation {
  */
 export function hasTranslation(language: string): boolean {
   return language in translations;
+}
+
+/**
+ * Fill `{placeholder}` tokens in a UI string, e.g. interpolate("Switch to {language}", { language: "Deutsch" }).
+ * Unknown placeholders are left as they are.
+ */
+export function interpolate(template: string, values: Record<string, string>): string {
+  return template.replace(/\{(\w+)\}/g, (match, key: string) => values[key] ?? match);
 }
 
 export default translations;

@@ -136,5 +136,19 @@
       "Berührt ist geführt",
       "Offizielle Regeln findest du unter: <a href=\"https://www.braendi-dog.de/en/braendi-dog-spielregeln-anleitungen.html\" target=\"_blank\" rel=\"noopener noreferrer\">www.braendi-dog.de</a>"
     ]
+  },
+  "ui": {
+    "viewDetails": "Details zu {name} anzeigen",
+    "close": "Schliessen",
+    "settings": "Einstellungen",
+    "language": "Sprache",
+    "switchTo": "Zu {language} wechseln",
+    "textSize": "Textgrösse",
+    "textSizeSmall": "Klein",
+    "textSizeMedium": "Mittel",
+    "textSizeLarge": "Gross",
+    "darkMode": "Dunkelmodus",
+    "readAloud": "Vorlesen",
+    "stopReading": "Vorlesen beenden"
   }
 }
