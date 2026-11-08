@@ -50,7 +50,6 @@ export interface UIStrings {
 
 interface LanguageData {
   title: string;
-  description: string;
   cards: {
     [id: string]: CardTranslation;
   };
@@ -63,7 +62,6 @@ interface LanguageData {
 
 export interface Translation {
   title: string;
-  description: string;
   cards: Card[];
   general: {
     title: string;
@@ -97,7 +95,6 @@ function mergeCardsWithMetadata(langData: LanguageData): Translation {
 
   return {
     title: langData.title,
-    description: langData.description,
     cards,
     general: langData.general,
     ui: { ...defaultUI, ...langData.ui },
@@ -118,13 +115,6 @@ const translations: Translations = {
  */
 export function getTranslation(language: string): Translation {
   return translations[language] ?? translations[DEFAULT_LANGUAGE];
-}
-
-/**
- * Check if a language has translations available
- */
-export function hasTranslation(language: string): boolean {
-  return language in translations;
 }
 
 /**

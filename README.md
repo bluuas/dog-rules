@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DOG Rules
 
-## Getting Started
+A quick reference for the card game DOG as a small web app: tap a card to see what it does. Six languages, works offline, installable on a phone, and it can read the rules aloud.
 
-First, run the development server:
+Live: https://dog-rules.onrender.com
+
+## Features
+
+- Rules per card, with a short version in the grid and details in a popup
+- Six languages: German, English, Spanish, Italian, French, Swedish. The language comes from the URL (`?lang=de`), then the saved choice, then the browser language.
+- Read aloud: a speaker button in each card popup and next to the general rules, using the browser's built-in speech synthesis. Hidden when the device has no voice for the current language.
+- Text size and dark mode settings, remembered per device
+- Installable PWA that works offline after the first visit
+- Screen reader friendly: translated control labels, keyboard-operable cards, a dialog that manages focus
+
+## Development
+
+Requires Node 20 or newer and npm.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # static export into out/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The build is a static export (`output: 'export'` in `next.config.ts`): plain files in `out/`, no server. The service worker is only registered in production builds so development always serves fresh code.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The site runs on Render as a static site. Pushes to `main` deploy automatically.
 
-## Learn More
+- Build command: `npm run build`
+- Publish directory: `out`
 
-To learn more about Next.js, take a look at the following resources:
+Render's CDN keeps files for up to five minutes, so a deploy can take that long to show up. Visitors who already have the site open get the new version on their next visit; the service worker reloads stale pages once when it updates.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/app/
+  page.tsx                      card grid and general rules
+  layout.tsx                    metadata, viewport, fonts, providers
+  components/
+    Card.tsx                    one card in the grid, opens the popup
+    CardPopup.tsx               dialog with the full rules of a card
+    ReadAloudButton.tsx         speech synthesis control
+    SettingsButton.tsx          language, text size, dark mode
+    PWAInstaller.tsx            registers the service worker
+    ErrorBoundary.tsx
+  context/LanguageContext.tsx   selected language, also sets <html lang>
+  config/languages.ts           supported languages, names, flags
+  i18n/                         card metadata and translations, see i18n/README.md
+  lib/speech.ts                 voice selection and text cleanup for speech
+public/
+  sw.js                         service worker: pages network-first, hashed assets cache-first
+  manifest.json, icon-*.png     PWA manifest and icons
+```
 
-## Deploy on Vercel
+## Translations
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Card structure (id, letter, suit) lives once in `src/app/i18n/card-metadata.json`. Text lives per language in `src/app/i18n/locales/*.json`, including the labels screen readers announce. [src/app/i18n/README.md](src/app/i18n/README.md) explains how to add a card or a language.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Rules
+
+The rules follow the official Brändi Dog rules at https://www.braendi-dog.de. This app is an unofficial quick reference.
