@@ -2,7 +2,7 @@
 
 **Live app: https://dog-rules.onrender.com**
 
-A pocket rule reference for the card game DOG (Brändi Dog). Open it on your phone at the table, tap a card, and see what it lets you do. No account, no ads, and it works offline once loaded.
+A pocket rule reference for the card game DOG ([Brändi Dog](https://www.braendi-dog.de)). Open it on your phone at the table, tap a card, and see what it lets you do. No account, no ads, and it works offline once loaded.
 
 ## What DOG is
 
