@@ -1,65 +1,60 @@
 # DOG Rules
 
-A quick reference for the card game DOG as a small web app: tap a card to see what it does. Six languages, works offline, installable on a phone, and it can read the rules aloud.
+**Live app: https://dog-rules.onrender.com**
 
-Live: https://dog-rules.onrender.com
+A pocket rule reference for the card game DOG (Brändi Dog). Open it on your phone at the table, tap a card, and see what it lets you do. No account, no ads, and it works offline once loaded.
 
-## Features
+## What DOG is
 
-- Rules per card, with a short version in the grid and details in a popup
-- Six languages: German, English, Spanish, Italian, French, Swedish. The language comes from the URL (`?lang=de`), then the saved choice, then the browser language.
-- Read aloud: a speaker button in each card popup and next to the general rules, using the browser's built-in speech synthesis. Hidden when the device has no voice for the current language.
-- Text size and dark mode settings, remembered per device
-- Installable PWA that works offline after the first visit
-- Screen reader friendly: translated control labels, keyboard-operable cards, a dialog that manages focus
+DOG is a Swiss board game in the Ludo family: every player moves four marbles around the board and into their home. Instead of dice you play cards, and each card allows a different move. Remembering what the Jack, the 7 or the Joker do is the hard part, especially for new players. This app is that cheat sheet.
 
-## Development
+## What the app does
+
+- **One tap per card.** The grid shows every card with its short rule. Tapping a card opens the full rule with the edge cases.
+- **Six languages.** German, English, Spanish, Italian, French and Swedish. Pick one in the settings, or share a link that opens in a given language, for example `https://dog-rules.onrender.com/?lang=de`.
+- **Read aloud.** The speaker button in a card popup, and next to the general rules, reads the rules out with your device's own voice. Handy when your hands are full of cards, or for kids who don't read yet. The button only appears when your device has a voice for the chosen language.
+- **Install it.** On iPhone: Share, then Add to Home Screen. On Android: browser menu, then Install app. It then opens like a native app and works without a connection.
+- **Readable for everyone.** Text size slider, dark mode, pinch zoom, and screen reader support with labels in every language.
+
+## About the rules
+
+The rules follow the official Brändi Dog rules at https://www.braendi-dog.de, with a few house rules from our table, for example "a move is a move" and "touched is played". If your group plays differently, the rule texts are plain JSON files and easy to change; see Contributing.
+
+This is an unofficial fan project. DOG and Brändi Dog are products of the Stiftung Brändi, which is not involved in this app.
+
+## Contributing
+
+Spotted a wrong translation or a missing rule? Open an issue at https://github.com/bluuas/dog-rules/issues or send a pull request.
+
+- Rule texts live in `src/app/i18n/locales/`, one JSON file per language. The card structure (which cards exist, their letters and suit) is shared in `src/app/i18n/card-metadata.json`.
+- Adding a language takes one new JSON file and two small code changes. [src/app/i18n/README.md](src/app/i18n/README.md) walks through it.
+
+## Running it yourself
 
 Requires Node 20 or newer and npm.
 
 ```bash
+git clone https://github.com/bluuas/dog-rules.git
+cd dog-rules
 npm install
 npm run dev      # http://localhost:3000
-npm run build    # static export into out/
+npm run build    # static site in out/
 ```
 
-The build is a static export (`output: 'export'` in `next.config.ts`): plain files in `out/`, no server. The service worker is only registered in production builds so development always serves fresh code.
+The build is a plain static export: upload the `out/` folder to any static host. The live site runs on Render as a static site with build command `npm run build` and publish directory `out`. The service worker is only registered in production builds, so development always serves fresh code.
 
-## Deployment
+## How it's built
 
-The site runs on Render as a static site. Pushes to `main` deploy automatically.
-
-- Build command: `npm run build`
-- Publish directory: `out`
-
-Render's CDN keeps files for up to five minutes, so a deploy can take that long to show up. Visitors who already have the site open get the new version on their next visit; the service worker reloads stale pages once when it updates.
-
-## Project structure
+Next.js 15 with the app router and static export, React 19, TypeScript and Tailwind CSS 4. There is no backend. Reading aloud uses the browser's Web Speech API, so there are no audio files and no third-party service.
 
 ```
 src/app/
   page.tsx                      card grid and general rules
-  layout.tsx                    metadata, viewport, fonts, providers
-  components/
-    Card.tsx                    one card in the grid, opens the popup
-    CardPopup.tsx               dialog with the full rules of a card
-    ReadAloudButton.tsx         speech synthesis control
-    SettingsButton.tsx          language, text size, dark mode
-    PWAInstaller.tsx            registers the service worker
-    ErrorBoundary.tsx
+  layout.tsx                    metadata, viewport, fonts
+  components/                   Card, CardPopup, ReadAloudButton, SettingsButton, PWAInstaller
   context/LanguageContext.tsx   selected language, also sets <html lang>
   config/languages.ts           supported languages, names, flags
-  i18n/                         card metadata and translations, see i18n/README.md
+  i18n/                         card metadata and translations
   lib/speech.ts                 voice selection and text cleanup for speech
-public/
-  sw.js                         service worker: pages network-first, hashed assets cache-first
-  manifest.json, icon-*.png     PWA manifest and icons
+public/sw.js                    service worker: pages network-first, hashed assets cache-first
 ```
-
-## Translations
-
-Card structure (id, letter, suit) lives once in `src/app/i18n/card-metadata.json`. Text lives per language in `src/app/i18n/locales/*.json`, including the labels screen readers announce. [src/app/i18n/README.md](src/app/i18n/README.md) explains how to add a card or a language.
-
-## Rules
-
-The rules follow the official Brändi Dog rules at https://www.braendi-dog.de. This app is an unofficial quick reference.
